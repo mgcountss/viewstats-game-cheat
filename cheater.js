@@ -4,7 +4,6 @@ const cheat = async function () {
     const a = document.querySelectorAll('img');
     let ids = [];
     let elements = [];
-    let maxName = "";
     let maxViews = 0;
     let maxIndex = 0;
     a.forEach((img) => {
