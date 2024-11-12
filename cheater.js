@@ -22,9 +22,11 @@ const cheat = async function () {
                 };
             });
     };
-    elements[maxIndex].parentNode.click();
     setTimeout(() => {
-        document.querySelector(".next-round-button_next_round_button__mkT8X").click()
+        setTimeout(() => {
+            elements[maxIndex].parentNode.click();
+            document.querySelector(".next-round-button_next_round_button__mkT8X").click()
+        }, 1500);
     }, 500);
 };
-const cheater = setInterval(cheat, 1500);
+const cheater = setInterval(cheat, 2500);
