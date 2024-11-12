@@ -1,3 +1,5 @@
+const maxRounds = 54;
+let rounds = 0;
 const cheat = async function () {
     const a = document.querySelectorAll('img');
     let ids = [];
@@ -24,8 +26,15 @@ const cheat = async function () {
     };
     setTimeout(() => {
         setTimeout(() => {
-            elements[maxIndex].parentNode.click();
-            document.querySelector(".next-round-button_next_round_button__mkT8X").click()
+            try {
+                elements[maxIndex].parentNode.click();
+                document.querySelector(".next-round-button_next_round_button__mkT8X").click();
+            } catch (error) {
+                rounds++;
+                if (rounds == maxRounds) {
+                    clearInterval(cheater);
+                }
+            }
         }, 1500);
     }, 500);
 };
